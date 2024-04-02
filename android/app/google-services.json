@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "855899288121",
+    "project_id": "ethiochat-backend-d23d6",
+    "storage_bucket": "ethiochat-backend-d23d6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:855899288121:android:793df491d9fe2c7c5b53e8",
+        "android_client_info": {
+          "package_name": "com.example.ethiochat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBx1jrRHjI5hX1nX-AKMuP65tqXF5SYl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
