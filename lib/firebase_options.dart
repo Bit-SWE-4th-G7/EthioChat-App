@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -48,6 +45,15 @@ class DefaultFirebaseOptions {
         );
     }
   }
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAnLBbKd2dhtSZ2dAmFcoTP5_ZXwr9bkE0',
+    appId: '1:855899288121:web:815d851a72f7bdf75b53e8',
+    messagingSenderId: '855899288121',
+    projectId: 'ethiochat-backend-d23d6',
+    authDomain: 'ethiochat-backend-d23d6.firebaseapp.com',
+    storageBucket: 'ethiochat-backend-d23d6.appspot.com',
+  );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCBx1jrRHjI5hX1nX-AKMuP65tqXF5SYl0',
