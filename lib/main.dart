@@ -3,16 +3,19 @@ import 'package:ethiochat/screens/landing_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ethiochat/colors.dart';
+import 'package:ethiochat/router.dart';
 import 'package:ethiochat/screens/mobile_layout_screen.dart';
-import 'package:ethiochat/screens/web_layout_screen.dart';
-import 'package:ethiochat/utils/responsive_layout.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() async{
-await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child:  MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,12 +25,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Whatsapp UI',
+      title: 'EthioChat UI',
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: backgroundColor,
-      ),
-      onGenerateRoute: ,
-      home:  LandingScreen(),
+          scaffoldBackgroundColor: backgroundColor,
+          appBarTheme: const AppBarTheme(
+            color: appBarColor,
+          )),
+      onGenerateRoute:  AppRouter.generateRoute,
+      home: const LandingScreen(),
     );
   }
 }
