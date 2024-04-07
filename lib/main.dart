@@ -1,3 +1,6 @@
+import 'package:ethiochat/common/error.dart';
+import 'package:ethiochat/common/widgets/loader.dart';
+import 'package:ethiochat/features/auth/controller/auth_controller.dart';
 import 'package:ethiochat/firebase_options.dart';
 import 'package:ethiochat/screens/landing_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -13,16 +16,14 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-  runApp(
-    const ProviderScope(
-      child:  MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'EthioChat UI',
@@ -31,8 +32,19 @@ class MyApp extends StatelessWidget {
           appBarTheme: const AppBarTheme(
             color: appBarColor,
           )),
-      onGenerateRoute:  AppRouter.generateRoute,
-      home: const LandingScreen(),
+      onGenerateRoute: AppRouter.generateRoute,
+      home: ref.watch(userDataAuthProvider).when(
+            data: (user) {
+              if (user == null) {
+                return const LandingScreen();
+              }
+              return const MobileLayoutScreen();
+            },
+            error: (err, trace) {
+              return ErrorScreen(error: err.toString());
+            },
+            loading: () => const Loader(),
+          ),
     );
   }
 }
