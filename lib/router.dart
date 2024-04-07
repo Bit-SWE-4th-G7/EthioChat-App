@@ -2,6 +2,7 @@ import 'package:ethiochat/common/error.dart';
 import 'package:ethiochat/features/auth/screens/login_screen.dart';
 import 'package:ethiochat/features/auth/screens/otp_screen.dart';
 import 'package:ethiochat/features/auth/screens/user_information_screen.dart';
+import 'package:ethiochat/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -21,6 +22,10 @@ class AppRouter {
         case UserInformationScreen.routeName:
         return MaterialPageRoute(
           builder: (context) => UserInformationScreen(),
+        );
+        case SelectContactsScreen.routeName:
+        return MaterialPageRoute(
+          builder: (context) =>  SelectContactsScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold(
