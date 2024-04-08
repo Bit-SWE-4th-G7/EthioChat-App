@@ -50,7 +50,7 @@ class LandingScreen extends StatelessWidget {
             width: size.width * 0.75,
             child: CustomButton(
               text: "Agree and Continue",
-              onPressed: () => navigateTOLoginScreen(context),
+              onPressed: () => navigateToLoginScreen(context),
             ))
       ],
     )));
