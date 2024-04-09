@@ -15,7 +15,7 @@ final userDataAuthProvider = FutureProvider<UserModel?>((ref) async {
     final authController = ref.watch(authControllerProvider);
     return await authController.getUserData();
   } catch (e) {
-    print('Error fetching user data: $e');
+     print('Error fetching user data: $e');
   }
 });
 
