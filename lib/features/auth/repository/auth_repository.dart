@@ -88,11 +88,10 @@ Future<UserModel?> getCurrentUserData() async {
     String photoURL = 'https://png.pngitem.com/pimgs/s/649-6490124_katie-notopoulos-katienotopoulos-i-write-about-tech-round.png';
 
     if (profilePic != null) {
-     String storagePath = 'profilePics/$uid/${DateTime.now().millisecondsSinceEpoch}';
      photoURL = await ref
           .read(commonFirebaseStorageRepositoryProvider)
           .storeFileTOFirebase(
-            storagePath, 
+           'profilePics/$uid', 
             profilePic,
           );
     }
