@@ -21,15 +21,15 @@ class AppRouter {
         );
         case UserInformationScreen.routeName:
         return MaterialPageRoute(
-          builder: (context) => UserInformationScreen(),
+          builder: (context) => const UserInformationScreen(),
         );
         case SelectContactsScreen.routeName:
         return MaterialPageRoute(
-          builder: (context) =>  SelectContactsScreen(),
+          builder: (context) =>  const SelectContactsScreen(),
         );
       default:
         return MaterialPageRoute(builder: (context) => const Scaffold(
-          body:const ErrorScreen(error: "This page doesn\'t exist",)
+          body:ErrorScreen(error: "This page doesn\'t exist",)
         ));
     }
   }
