@@ -27,6 +27,10 @@ class ChatController {
     return chatRepository.getChatContacts();
   }
 
+  Stream<List<Message>> chatStream(String recieverUserId) {
+    return chatRepository.getChatStream(recieverUserId);
+  }
+
   void sendTextMessage(
     BuildContext context,
     String text,

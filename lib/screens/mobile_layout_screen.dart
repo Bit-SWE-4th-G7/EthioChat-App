@@ -1,7 +1,7 @@
 import 'package:ethiochat/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ethiochat/colors.dart';
-import 'package:ethiochat/widgets/contacts_list.dart';
+import 'package:ethiochat/features/chat/widgets/contacts_list.dart';
 
 class MobileLayoutScreen extends StatelessWidget {
   const MobileLayoutScreen({Key? key}) : super(key: key);

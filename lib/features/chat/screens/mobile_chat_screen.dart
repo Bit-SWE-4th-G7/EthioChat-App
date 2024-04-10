@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:ethiochat/colors.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ethiochat/widgets/chat_list.dart';
+import 'package:ethiochat/features/chat/widgets/chat_list.dart';
 import 'package:ethiochat/models/user_model.dart';
 import 'package:ethiochat/features/auth/controller/auth_controller.dart';
 import 'package:ethiochat/common/widgets/loader.dart';
 import 'package:ethiochat/features/chat/widgets/bottom_chat_field.dart';
+import 'package:ethiochat/features/chat/widgets/chat_list.dart';
 
 class MobileChatScreen extends ConsumerWidget {
   static const String routeName = '/mobile-chat-screen';
@@ -58,8 +59,10 @@ class MobileChatScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          const Expanded(
-            child: ChatList(),
+          Expanded(
+            child: ChatList(
+              recieverUserId: uid,
+            ),
           ),
           BottomChatField(
             recieverUserId: uid,
