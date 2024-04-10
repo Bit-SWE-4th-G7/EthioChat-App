@@ -2,7 +2,7 @@ import 'package:ethiochat/common/error.dart';
 import 'package:ethiochat/common/widgets/loader.dart';
 import 'package:ethiochat/features/auth/controller/auth_controller.dart';
 import 'package:ethiochat/firebase_options.dart';
-import 'package:ethiochat/screens/landing_screen.dart';
+import 'package:ethiochat/features/landing/screens/landing_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:ethiochat/colors.dart';

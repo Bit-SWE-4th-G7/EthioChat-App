@@ -24,10 +24,11 @@ class AuthRepository {
     required this.firestore,
   });
 
-Future<UserModel?> getCurrentUserData() async {
-   var userData = await firestore.collection('users').doc(auth.currentUser!.uid).get();
-   UserModel? user;
-    if(userData.data() != null){
+  Future<UserModel?> getCurrentUserData() async {
+    var userData =
+        await firestore.collection('users').doc(auth.currentUser!.uid).get();
+    UserModel? user;
+    if (userData.data() != null) {
       user = UserModel.fromMap(userData.data()!);
     }
     return user;
@@ -78,42 +79,50 @@ Future<UserModel?> getCurrentUserData() async {
   }
 
   void saveUserDataToFirebase({
-  required String name,
-  required File? profilePic,
-  required ProviderRef ref,
-  required BuildContext context,
-}) async {
-  try {
-    String uid = auth.currentUser!.uid;
-    String photoURL = 'https://png.pngitem.com/pimgs/s/649-6490124_katie-notopoulos-katienotopoulos-i-write-about-tech-round.png';
+    required String name,
+    required File? profilePic,
+    required ProviderRef ref,
+    required BuildContext context,
+  }) async {
+    try {
+      String uid = auth.currentUser!.uid;
+      String photoURL =
+          'https://png.pngitem.com/pimgs/s/649-6490124_katie-notopoulos-katienotopoulos-i-write-about-tech-round.png';
 
-    if (profilePic != null) {
-     photoURL = await ref
-          .read(commonFirebaseStorageRepositoryProvider)
-          .storeFileTOFirebase(
-           'profilePics/$uid', 
-            profilePic,
-          );
+      if (profilePic != null) {
+        photoURL = await ref
+            .read(commonFirebaseStorageRepositoryProvider)
+            .storeFileTOFirebase(
+              'profilePics/$uid',
+              profilePic,
+            );
+      }
+      var user = UserModel(
+        name: name,
+        uid: uid,
+        profilePic: photoURL,
+        isOnline: true,
+        phoneNumber: auth.currentUser!.phoneNumber!,
+        groupId: [],
+      );
+      await firestore.collection('users').doc(uid).set(user.toMap());
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const MobileLayoutScreen(),
+        ),
+        (route) => false,
+      );
+    } catch (e) {
+      showSnackBar(context: context, content: e.toString());
     }
-    var user = UserModel(
-      name: name,
-      uid: uid,
-      profilePic: photoURL,
-      isOnline: true,
-      phoneNumber: auth.currentUser!.uid,
-      groupId: [],
-    );
-    await firestore.collection('users').doc(uid).set(user.toMap());
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const MobileLayoutScreen(),
-      ),
-      (route) => false,
-    );
+  }
 
-  } catch (e) {
-    showSnackBar(context: context, content: e.toString());
-    }
- }
+  Stream<UserModel> userData(String userId) {
+    return firestore.collection('users').doc(userId).snapshots().map(
+          (event) => UserModel.fromMap(
+            event.data()!,
+          ),
+        );
+  }
 }

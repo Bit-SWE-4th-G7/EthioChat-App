@@ -15,7 +15,7 @@ final userDataAuthProvider = FutureProvider<UserModel?>((ref) async {
     final authController = ref.watch(authControllerProvider);
     return await authController.getUserData();
   } catch (e) {
-     print('Error fetching user data: $e');
+    print('Error fetching user data: $e');
   }
 });
 
@@ -27,11 +27,11 @@ class AuthController {
 
   Future<UserModel?> getUserData() async {
     try {
-    UserModel? user = await authRepository.getCurrentUserData();
-    return user;
-  } catch (error) {
-    return null;
-  }
+      UserModel? user = await authRepository.getCurrentUserData();
+      return user;
+    } catch (error) {
+      return null;
+    }
   }
 
   void signInWithPhone(BuildContext context, String phoneNumber) {
@@ -54,5 +54,9 @@ class AuthController {
       profilePic: profilePic,
       ref: ref,
     );
+  }
+
+  Stream<UserModel> userDataById(String userId) {
+    return authRepository.userData(userId);
   }
 }
