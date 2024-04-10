@@ -1,18 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:ethiochat/colors.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:ethiochat/features/chat/controller/chat_controller.dart';
 
-class BottomChatField extends StatefulWidget {
+class BottomChatField extends ConsumerStatefulWidget {
+  final String recieverUserId;
   const BottomChatField({
     super.key,
+    required this.recieverUserId,
   });
 
   @override
-  State<BottomChatField> createState() => _BottomChatFieldState();
+  ConsumerState<BottomChatField> createState() => _BottomChatFieldState();
 }
 
-class _BottomChatFieldState extends State<BottomChatField> {
+class _BottomChatFieldState extends ConsumerState<BottomChatField> {
   bool isShowSendButton = false;
+  final TextEditingController _messageController = TextEditingController();
+
+  void sendTextMessage() async {
+    if (isShowSendButton) {
+      print(_messageController.text.trim());
+      ref.read(chatControllerProvider).sendTextMessage(
+            context,
+            _messageController.text.trim(),
+            widget.recieverUserId,
+          );
+      setState(() {
+        _messageController.text = '';
+      });
+    }
+    //  else {
+    //   var tempDir = await getTemporaryDirectory();
+    //   var path = '${tempDir.path}/flutter_sound.aac';
+    //   if (!isRecorderInit) {
+    //     return;
+    //   }
+    //   if (isRecording) {
+    //     await _soundRecorder!.stopRecorder();
+    //     sendFileMessage(File(path), MessageEnum.audio);
+    //   } else {
+    //     await _soundRecorder!.startRecorder(
+    //       toFile: path,
+    //     );
+    //   }
+
+    //   setState(() {
+    //     isRecording = !isRecording;
+    //   });
+    // }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _messageController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,6 +66,7 @@ class _BottomChatFieldState extends State<BottomChatField> {
           children: [
             Expanded(
               child: TextFormField(
+                controller: _messageController,
                 onChanged: (val) {
                   if (val.isNotEmpty) {
                     setState(() {
@@ -107,6 +153,7 @@ class _BottomChatFieldState extends State<BottomChatField> {
                     isShowSendButton ? Icons.send : Icons.mic,
                     color: Colors.white,
                   ),
+                  onTap: sendTextMessage,
                 ),
               ),
             ),
