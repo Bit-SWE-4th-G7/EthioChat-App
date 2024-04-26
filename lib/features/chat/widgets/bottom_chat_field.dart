@@ -205,7 +205,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                 left: 2,
               ),
               child: CircleAvatar(
-                backgroundColor: const Color(0xFF128C7E),
+                backgroundColor: Color.fromRGBO(160, 96, 255, 1.0),
                 radius: 25,
                 child: GestureDetector(
                   child: Icon(
