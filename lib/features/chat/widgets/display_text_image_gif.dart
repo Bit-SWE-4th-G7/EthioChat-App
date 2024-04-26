@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ethiochat/features/chat/widgets/video_player_item.dart';
 import 'package:ethiochat/models/message.dart';
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 import 'package:ethiochat/common/enums/message_enum.dart';
 
@@ -18,7 +19,7 @@ class DisplayTextImageGIF extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isPlaying = false;
-    // final AudioPlayer audioPlayer = AudioPlayer();
+    final AudioPlayer audioPlayer = AudioPlayer();
 
     return type == MessageEnum.text
         ? Text(
@@ -34,17 +35,17 @@ class DisplayTextImageGIF extends StatelessWidget {
                     minWidth: 100,
                   ),
                   onPressed: () async {
-                    // if (isPlaying) {
-                    //   await audioPlayer.pause();
-                    //   setState(() {
-                    //     isPlaying = false;
-                    //   });
-                    // } else {
-                    //   await audioPlayer.play(UrlSource(message));
-                    //   setState(() {
-                    //     isPlaying = true;
-                    //   });
-                    // }
+                    if (isPlaying) {
+                      await audioPlayer.pause();
+                      setState(() {
+                        isPlaying = false;
+                      });
+                    } else {
+                      await audioPlayer.play(UrlSource(message));
+                      setState(() {
+                        isPlaying = true;
+                      });
+                    }
                   },
                   icon: Icon(
                     isPlaying ? Icons.pause_circle : Icons.play_circle,
@@ -64,4 +65,3 @@ class DisplayTextImageGIF extends StatelessWidget {
                       );
   }
 }
-

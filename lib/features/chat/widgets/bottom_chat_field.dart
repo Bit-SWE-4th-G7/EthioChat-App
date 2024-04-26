@@ -58,8 +58,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
       setState(() {
         _messageController.text = '';
       });
-    }
-     else {
+    } else {
       var tempDir = await getTemporaryDirectory();
       var path = '${tempDir.path}/flutter_sound.aac';
       if (!isRecorderInit) {
@@ -165,20 +164,13 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                   prefixIcon: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: SizedBox(
-                      width: 100,
+                      width: 50,
                       child: Row(
                         children: [
                           IconButton(
                             onPressed: toggleEmojiKeyboardContainer,
                             icon: const Icon(
                               Icons.emoji_emotions,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          IconButton(
-                            onPressed: () {},
-                            icon: const Icon(
-                              Icons.gif,
                               color: Colors.grey,
                             ),
                           ),
@@ -230,8 +222,12 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                 backgroundColor: Color.fromRGBO(160, 96, 255, 1.0),
                 radius: 25,
                 child: GestureDetector(
-                  child:  Icon(
-                    isShowSendButton ? Icons.send : isRecording? Icons.close: Icons.mic,
+                  child: Icon(
+                    isShowSendButton
+                        ? Icons.send
+                        : isRecording
+                            ? Icons.close
+                            : Icons.mic,
                     color: Colors.white,
                   ),
                   onTap: sendTextMessage,
