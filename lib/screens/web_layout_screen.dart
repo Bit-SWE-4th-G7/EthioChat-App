@@ -4,8 +4,8 @@ import 'package:ethiochat/info.dart';
 import 'package:ethiochat/features/chat/widgets/chat_list.dart';
 import 'package:ethiochat/widgets/web_chat_appbar.dart';
 import 'package:ethiochat/features/chat/widgets/contacts_list.dart';
-import 'package:ethiochat/widgets/my_message_card.dart';
-import 'package:ethiochat/widgets/sender_message_card.dart';
+import 'package:ethiochat/features/chat/widgets/my_message_card.dart';
+import 'package:ethiochat/features/chat/widgets/sender_message_card.dart';
 import 'package:ethiochat/widgets/web_profile_bar.dart';
 import 'package:ethiochat/widgets/web_search_bar.dart';
 

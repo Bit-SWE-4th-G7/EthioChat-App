@@ -5,8 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:ethiochat/common/enums/message_enum.dart';
 import 'package:ethiochat/common/widgets/loader.dart';
-import 'package:ethiochat/widgets/my_message_card.dart';
-import 'package:ethiochat/widgets/sender_message_card.dart';
+import 'package:ethiochat/features/chat/widgets/my_message_card.dart';
+import 'package:ethiochat/features/chat/widgets/sender_message_card.dart';
 import 'package:ethiochat/features/chat/controller/chat_controller.dart';
 import 'package:ethiochat/models/message.dart';
 
@@ -56,10 +56,14 @@ class _ChatListState extends ConsumerState<ChatList> {
                 return MyMessageCard(
                   message: messageData.text,
                   date: timeSent,
+                  type: messageData.type,
                 );
               }
               return SenderMessageCard(
-                  message: messageData.text, date: timeSent);
+                message: messageData.text,
+                date: timeSent,
+                type: messageData.type,
+              );
             },
           );
         });

@@ -3,6 +3,9 @@ import 'package:ethiochat/colors.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ethiochat/features/chat/controller/chat_controller.dart';
+import 'dart:io';
+import 'package:ethiochat/common/utils/utils.dart';
+import 'package:ethiochat/common/enums/message_enum.dart';
 
 class BottomChatField extends ConsumerStatefulWidget {
   final String recieverUserId;
@@ -50,6 +53,32 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
     //     isRecording = !isRecording;
     //   });
     // }
+  }
+
+  void sendFileMessage(
+    File file,
+    MessageEnum messageEnum,
+  ) {
+    ref.read(chatControllerProvider).sendFileMessage(
+          context,
+          file,
+          widget.recieverUserId,
+          messageEnum,
+        );
+  }
+
+  void selectImage() async {
+    File? image = await pickImageFromGallery(context);
+    if (image != null) {
+      sendFileMessage(image, MessageEnum.image);
+    }
+  }
+
+  void selectVideo() async {
+    File? video = await pickVideoFromGallery(context);
+    if (video != null) {
+      sendFileMessage(video, MessageEnum.video);
+    }
   }
 
   @override
@@ -111,14 +140,14 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: selectImage,
                           icon: const Icon(
                             Icons.camera_alt,
                             color: Colors.grey,
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: selectVideo,
                           icon: const Icon(
                             Icons.attach_file,
                             color: Colors.grey,
