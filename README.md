@@ -8,7 +8,7 @@
 
 ### Authors
 ### Group 7 Members
--Jemal Workie 1307712
+-Jemal Workie
 -Solomon Muhye
 -Yikeber Misganaw
 
