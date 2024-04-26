@@ -55,17 +55,17 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             'EthioChat',
             style: TextStyle(
               fontSize: 20,
-              color: Colors.grey,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
             ),
           ),
           actions: [
             IconButton(
-              icon: const Icon(Icons.search, color: Colors.grey),
+              icon: const Icon(Icons.search, color: Colors.black),
               onPressed: () {},
             ),
             IconButton(
-              icon: const Icon(Icons.more_vert, color: Colors.grey),
+              icon: const Icon(Icons.more_vert, color: Colors.black),
               onPressed: () {},
             ),
           ],
@@ -73,7 +73,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             indicatorColor: tabColor,
             indicatorWeight: 4,
             labelColor: tabColor,
-            unselectedLabelColor: Colors.grey,
+            unselectedLabelColor: Colors.black,
             labelStyle: TextStyle(
               fontWeight: FontWeight.bold,
             ),
