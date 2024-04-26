@@ -7,7 +7,7 @@
 - RiverPod state management library
 
 ### Authors
--Jemal Workie 
+-Jemal Workie
 -Solomon Muhye
 
 ##### Copyright &copy; 2024
