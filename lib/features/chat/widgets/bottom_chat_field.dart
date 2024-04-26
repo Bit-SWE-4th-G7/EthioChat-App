@@ -4,6 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:ethiochat/features/chat/controller/chat_controller.dart';
 import 'dart:io';
+import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
+
 import 'package:ethiochat/common/utils/utils.dart';
 import 'package:ethiochat/common/enums/message_enum.dart';
 
@@ -20,6 +22,9 @@ class BottomChatField extends ConsumerStatefulWidget {
 
 class _BottomChatFieldState extends ConsumerState<BottomChatField> {
   bool isShowSendButton = false;
+  bool isShowEmojiContainer = false;
+  FocusNode focusNode = FocusNode();
+
   final TextEditingController _messageController = TextEditingController();
 
   void sendTextMessage() async {
@@ -74,6 +79,30 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
     }
   }
 
+  void hideEmojiContainer() {
+    setState(() {
+      isShowEmojiContainer = false;
+    });
+  }
+
+  void showEmojiContainer() {
+    setState(() {
+      isShowEmojiContainer = true;
+    });
+  }
+
+  void showKeyboard() => focusNode.requestFocus();
+  void hideKeyboard() => focusNode.unfocus();
+  void toggleEmojiKeyboardContainer() {
+    if (isShowEmojiContainer) {
+      showKeyboard();
+      hideEmojiContainer();
+    } else {
+      hideKeyboard();
+      showEmojiContainer();
+    }
+  }
+
   void selectVideo() async {
     File? video = await pickVideoFromGallery(context);
     if (video != null) {
@@ -95,6 +124,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
           children: [
             Expanded(
               child: TextFormField(
+                focusNode: focusNode,
                 controller: _messageController,
                 onChanged: (val) {
                   if (val.isNotEmpty) {
@@ -117,7 +147,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                       child: Row(
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: toggleEmojiKeyboardContainer,
                             icon: const Icon(
                               Icons.emoji_emotions,
                               color: Colors.grey,
@@ -188,6 +218,25 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
             ),
           ],
         ),
+        isShowEmojiContainer
+            ? SizedBox(
+                height: 310,
+                child: EmojiPicker(
+                  onEmojiSelected: ((category, emoji) {
+                    setState(() {
+                      _messageController.text =
+                          _messageController.text + emoji.emoji;
+                    });
+
+                    if (!isShowSendButton) {
+                      setState(() {
+                        isShowSendButton = true;
+                      });
+                    }
+                  }),
+                ),
+              )
+            : const SizedBox(),
       ],
     );
   }
