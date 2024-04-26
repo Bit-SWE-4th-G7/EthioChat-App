@@ -7,7 +7,8 @@
 - RiverPod state management library
 
 ### Authors
--Jemal Workie
+### Group 7 Members
+-Jemal Workie 1307712
 -Solomon Muhye
 -Yikeber Misganaw
 
