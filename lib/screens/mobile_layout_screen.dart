@@ -73,7 +73,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             indicatorColor: tabColor,
             indicatorWeight: 4,
             labelColor: tabColor,
-            unselectedLabelColor: Colors.black,
+            unselectedLabelColor: Colors.grey,
             labelStyle: TextStyle(
               fontWeight: FontWeight.bold,
             ),

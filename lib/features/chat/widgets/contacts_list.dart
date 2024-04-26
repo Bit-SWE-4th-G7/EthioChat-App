@@ -42,8 +42,7 @@ class ContactsList extends ConsumerWidget {
                           title: Text(
                             chatContactData.name,
                             style: const TextStyle(
-                              fontSize: 18,
-                            ),
+                                fontSize: 18, color: Colors.black),
                           ),
                           subtitle: Padding(
                             padding: const EdgeInsets.only(top: 6.0),
