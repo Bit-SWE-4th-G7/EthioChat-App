@@ -37,11 +37,11 @@ class ChatAppBar extends StatelessWidget {
             children: [
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.search, color: Colors.grey),
+                icon: const Icon(Icons.search, color: Colors.black),
               ),
               IconButton(
                 onPressed: () {},
-                icon: const Icon(Icons.more_vert, color: Colors.grey),
+                icon: const Icon(Icons.more_vert, color: Colors.black),
               ),
             ],
           ),

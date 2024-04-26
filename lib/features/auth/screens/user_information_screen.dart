@@ -27,16 +27,18 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
     image = await pickImageFromGallery(context);
     setState(() {});
   }
+
   void storeUserData() async {
-      String name = nameController.text.trim();
-      if (name.isNotEmpty) {
-        ref.read(authControllerProvider).saveUserDataToFirebase(
+    String name = nameController.text.trim();
+    if (name.isNotEmpty) {
+      ref.read(authControllerProvider).saveUserDataToFirebase(
             context,
-             name,
+            name,
             image,
           );
-      }
     }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
