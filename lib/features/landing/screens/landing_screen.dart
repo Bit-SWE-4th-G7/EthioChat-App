@@ -23,16 +23,13 @@ class LandingScreen extends StatelessWidget {
         const Text(
           "Welcome to EthioChat",
           style: TextStyle(
-            fontSize: 33,
-            fontWeight: FontWeight.w600,
-          ),
+              fontSize: 33, fontWeight: FontWeight.w600, color: Colors.black),
         ),
         SizedBox(height: size.height / 9),
         Image.asset(
           "assets/bg.png",
           height: 240,
           width: 240,
-          color: tabColor,
         ),
         SizedBox(height: size.height / 12),
         const Padding(
