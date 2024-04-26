@@ -52,7 +52,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
           backgroundColor: appBarColor,
           centerTitle: false,
           title: const Text(
-            'EthioChat',
+            'EthioChat App',
             style: TextStyle(
               fontSize: 20,
               color: Colors.black,
