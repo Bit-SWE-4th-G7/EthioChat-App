@@ -22,14 +22,20 @@ class OTPScreen extends ConsumerWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Verifiying Your Number'),
+          title: const Text(
+            'Verifiying Your Number',
+            style: TextStyle(color: Colors.black),
+          ),
           elevation: 0,
           backgroundColor: backgroundColor,
         ),
         body: Column(
           children: [
             const SizedBox(height: 20),
-            const Text('We have sent an SMS with a code.'),
+            const Text(
+              'We have sent an SMS with a code.',
+              style: TextStyle(color: Colors.black),
+            ),
             SizedBox(
               width: size.width * 0.5,
               child: TextField(
