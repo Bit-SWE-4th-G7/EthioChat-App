@@ -6,7 +6,8 @@
 - Firebase
 - RiverPod state management library
 
-~ Author
-### Solomon Muhye
+### Authors
+-Jemal Workie 
+-Solomon Muhye
 
 ##### Copyright &copy; 2024
