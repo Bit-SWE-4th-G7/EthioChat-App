@@ -78,8 +78,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   onPressed: pickCountry,
                   child: Text(
                     "Pick Country",
-                    style: TextStyle(
-                        color: Colors.black, backgroundColor: Colors.blue[200]),
+                    style: TextStyle(color: Colors.black),
                   )),
               const SizedBox(
                 height: 5,
