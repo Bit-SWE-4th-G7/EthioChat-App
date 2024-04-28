@@ -6,7 +6,6 @@ import 'package:ethiochat/models/status_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class StatusContactsScreen extends ConsumerWidget {
   const StatusContactsScreen({Key? key}) : super(key: key);
 
@@ -37,6 +36,7 @@ class StatusContactsScreen extends ConsumerWidget {
                     child: ListTile(
                       title: Text(
                         statusData.username,
+                        style: TextStyle(color: Colors.black),
                       ),
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(
