@@ -100,7 +100,7 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
                 text: 'CHATS',
               ),
               Tab(
-                text: 'STATUS',
+                text: 'STORIES',
               ),
             ],
           ),
