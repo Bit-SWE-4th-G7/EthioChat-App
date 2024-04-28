@@ -25,16 +25,7 @@ class SelectContactsScreen extends ConsumerWidget {
             'Select Contact',
             style: TextStyle(color: Colors.black),
           ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.search),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.more_vert),
-            ),
-          ],
+          actions: [],
         ),
         body: ref.watch(getContactsProvider).when(
             data: (ContactsList) => ListView.builder(

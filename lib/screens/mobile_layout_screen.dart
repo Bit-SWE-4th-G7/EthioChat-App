@@ -68,10 +68,6 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             ),
           ),
           actions: [
-            IconButton(
-              icon: const Icon(Icons.search, color: Colors.black),
-              onPressed: () {},
-            ),
             PopupMenuButton(
               icon: const Icon(
                 Icons.more_vert,
@@ -106,18 +102,15 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
               Tab(
                 text: 'STATUS',
               ),
-              Tab(
-                text: 'CALLS',
-              ),
             ],
           ),
         ),
         body: TabBarView(
           controller: tabBarController,
           children: const [
-             ContactsList(),
-             StatusContactsScreen(),
-            Text("Calls"),
+            ContactsList(),
+            StatusContactsScreen(),
+            // Text("Calls"),
           ],
         ),
         floatingActionButton: FloatingActionButton(
@@ -126,8 +119,9 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
               Navigator.pushNamed(context, SelectContactsScreen.routeName);
             } else {
               File? pickImage = await pickImageFromGallery(context);
-              if(pickImage != null){
-                Navigator.pushNamed(context, ConfirmStatusScreen.routeName, arguments: pickImage);
+              if (pickImage != null) {
+                Navigator.pushNamed(context, ConfirmStatusScreen.routeName,
+                    arguments: pickImage);
               }
             }
           },
