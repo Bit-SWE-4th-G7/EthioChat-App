@@ -1,4 +1,9 @@
+import 'dart:io';
+
+import 'package:ethiochat/common/utils/utils.dart';
 import 'package:ethiochat/features/select_contacts/screens/select_contacts_screen.dart';
+import 'package:ethiochat/features/status/screens/confirm_status_screen.dart';
+import 'package:ethiochat/features/status/screens/status_contacts_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:ethiochat/colors.dart';
 import 'package:ethiochat/features/chat/widgets/contacts_list.dart';
@@ -14,10 +19,12 @@ class MobileLayoutScreen extends ConsumerStatefulWidget {
 }
 
 class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
-    with WidgetsBindingObserver {
+    with WidgetsBindingObserver, TickerProviderStateMixin {
+  late TabController tabBarController;
   @override
   void initState() {
     super.initState();
+    tabBarController = TabController(length: 3, vsync: this);
     WidgetsBinding.instance.addObserver(this);
   }
 
@@ -83,7 +90,8 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
               ],
             ),
           ],
-          bottom: const TabBar(
+          bottom: TabBar(
+            controller: tabBarController,
             indicatorColor: tabColor,
             indicatorWeight: 4,
             labelColor: tabColor,
@@ -104,10 +112,24 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
             ],
           ),
         ),
-        body: const ContactsList(),
+        body: TabBarView(
+          controller: tabBarController,
+          children: const [
+             ContactsList(),
+             StatusContactsScreen(),
+            Text("Calls"),
+          ],
+        ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, SelectContactsScreen.routeName);
+          onPressed: () async {
+            if (tabBarController.index == 0) {
+              Navigator.pushNamed(context, SelectContactsScreen.routeName);
+            } else {
+              File? pickImage = await pickImageFromGallery(context);
+              if(pickImage != null){
+                Navigator.pushNamed(context, ConfirmStatusScreen.routeName, arguments: pickImage);
+              }
+            }
           },
           backgroundColor: tabColor,
           child: const Icon(

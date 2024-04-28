@@ -74,4 +74,15 @@ class ChatController {
               isGroupChat: isGroupChat ?? false),
         );
   }
+  void setChatMessageSeen(
+    BuildContext context,
+    String recieverUserId,
+    String messageId,
+  ) {
+    chatRepository.setChatMessageSeen(
+      context,
+      recieverUserId,
+      messageId,
+    );
+  }
 }
