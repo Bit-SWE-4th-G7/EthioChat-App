@@ -53,7 +53,13 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         title: const Text('Enter your phone number'),
         foregroundColor: Colors.black,
         elevation: 0,
-        backgroundColor: backgroundColor,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Color(0xFF00E4E3),
+            Color(0xFFA060FF),
+          ])),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(

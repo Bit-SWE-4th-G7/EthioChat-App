@@ -25,7 +25,13 @@ class MobileChatScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: appBarColor,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            Color(0xFF00E4E3),
+            Color(0xFFA060FF),
+          ])),
+        ),
         foregroundColor: Colors.black,
         title: isGroupChat == true
             ? Text(name)

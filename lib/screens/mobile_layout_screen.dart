@@ -57,7 +57,13 @@ class _MobileLayoutScreenState extends ConsumerState<MobileLayoutScreen>
       child: Scaffold(
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: appBarColor,
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Color(0xFF00E4E3),
+              Color(0xFFA060FF),
+            ])),
+          ),
           centerTitle: false,
           title: const Text(
             'EthioChat App',
