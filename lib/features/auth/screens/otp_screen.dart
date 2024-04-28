@@ -39,6 +39,9 @@ class OTPScreen extends ConsumerWidget {
             SizedBox(
               width: size.width * 0.5,
               child: TextField(
+                style: TextStyle(
+                  color: Colors.black, // Set the text color to black
+                ),
                 textAlign: TextAlign.center,
                 decoration: const InputDecoration(
                   hintText: '_ _ _ _ _ _',

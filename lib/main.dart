@@ -1,4 +1,4 @@
-import 'package:ethiochat/common/error.dart';
+import 'package:ethiochat/common/widgets/error.dart';
 import 'package:ethiochat/common/widgets/loader.dart';
 import 'package:ethiochat/features/auth/controller/auth_controller.dart';
 import 'package:ethiochat/firebase_options.dart';
@@ -28,10 +28,11 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       title: 'EthioChat UI',
       theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: backgroundColor,
-          appBarTheme: const AppBarTheme(
-            color: appBarColor,
-          )),
+        scaffoldBackgroundColor: backgroundColor,
+        appBarTheme: const AppBarTheme(
+          color: appBarColor,
+        ),
+      ),
       onGenerateRoute: AppRouter.generateRoute,
       home: ref.watch(userDataAuthProvider).when(
             data: (user) {

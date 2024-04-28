@@ -1,10 +1,10 @@
-import 'package:ethiochat/common/error.dart';
+import 'package:ethiochat/common/widgets/error.dart';
 import 'package:ethiochat/features/auth/screens/login_screen.dart';
 import 'package:ethiochat/features/auth/screens/otp_screen.dart';
 import 'package:ethiochat/features/auth/screens/user_information_screen.dart';
 import 'package:ethiochat/features/select_contacts/screens/select_contacts_screen.dart';
 import 'package:ethiochat/features/chat/screens/mobile_chat_screen.dart';
-
+import 'package:ethiochat/features/group/screens/create_group_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -33,11 +33,19 @@ class AppRouter {
         final arguments = settings.arguments as Map<String, dynamic>;
         final name = arguments['name'];
         final uid = arguments['uid'];
+        final isGroupChat = arguments['isGroupChat'] ?? false;
+        final profilePic = arguments['profilePic'];
         return MaterialPageRoute(
           builder: (context) => MobileChatScreen(
             name: name,
             uid: uid,
+            isGroupChat: isGroupChat ?? false,
+            profilePic: profilePic ?? '',
           ),
+        );
+      case CreateGroupScreen.routeName:
+        return MaterialPageRoute(
+          builder: (context) => const CreateGroupScreen(),
         );
       default:
         return MaterialPageRoute(

@@ -26,6 +26,7 @@ class DisplayTextImageGIF extends StatelessWidget {
             message,
             style: const TextStyle(
               fontSize: 16,
+              color: Colors.black,
             ),
           )
         : type == MessageEnum.audio

@@ -90,6 +90,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   SizedBox(
                     width: size.width * 0.7,
                     child: TextField(
+                      style: TextStyle(
+                        color: Colors.black, // Set the text color to black
+                      ),
                       controller: phoneController,
                       decoration: const InputDecoration(
                           hintText: "Phone number",
