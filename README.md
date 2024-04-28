@@ -10,9 +10,11 @@
 
 ### Group 7 Members
 
+- Dawit Zewdu
+- Ephrem Habtamu
+- Fentahun Mengie
 - Jemal Workie
 - Solomon Muhye
 - Yikeber Misganaw
-- Fentahun Mengie
 
 ##### Copyright &copy; 2024
