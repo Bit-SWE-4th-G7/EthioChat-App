@@ -40,6 +40,18 @@ flutter pub get
 ```bash
 flutter run
 ```
+
+## Learning Journey
+The development of EthioChat represents a journey of skill acquisition and application. The team mastered Flutter, RiverPod for state management, and Firebase for real-time communication and data storage. This involved learning various aspects of UI/UX design, backend development, and integrating Firebase services to ensure seamless functionality.
+
+## Timeline
+
+EthioChat's development cycle was remarkably swift, culminating in a fully functional app within a mere one month.
+
+## Security
+
+EthioChat prioritizes user data safety through stringent security measures, particularly in its robust user authentication system.
+
 ## Contributors
 
 ### Group 7 Members
