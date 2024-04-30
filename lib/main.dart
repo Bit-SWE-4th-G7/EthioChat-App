@@ -10,7 +10,7 @@ import 'package:ethiochat/router.dart';
 import 'package:ethiochat/screens/mobile_layout_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
- Future <void> main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

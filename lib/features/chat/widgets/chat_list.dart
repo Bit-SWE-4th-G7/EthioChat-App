@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:ethiochat/common/enums/message_enum.dart';
+// import 'package:ethiochat/common/enums/message_enum.dart';
 import 'package:ethiochat/common/widgets/loader.dart';
 import 'package:ethiochat/features/chat/widgets/my_message_card.dart';
 import 'package:ethiochat/features/chat/widgets/sender_message_card.dart';
@@ -56,9 +56,9 @@ class _ChatListState extends ConsumerState<ChatList> {
               final messageData = snapshot.data![index];
               var timeSent = DateFormat.Hm().format(messageData.timeSent);
 
-            if (!messageData.isSeen &&
-               messageData.recieverid ==
-                FirebaseAuth.instance.currentUser!.uid) {
+              if (!messageData.isSeen &&
+                  messageData.recieverid ==
+                      FirebaseAuth.instance.currentUser!.uid) {
                 ref.read(chatControllerProvider).setChatMessageSeen(
                       context,
                       widget.recieverUserId,
