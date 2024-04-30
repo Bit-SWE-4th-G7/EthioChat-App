@@ -18,6 +18,11 @@
 - Yikeber Misganaw
 ### Screenshots
 
+-First contact with app
+
+-Register
+
+-
 -Add contact
 
 ![Screenshot_20240430-151514](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/84dc0433-d38f-4fe8-8064-04f9ad64fbd4)
