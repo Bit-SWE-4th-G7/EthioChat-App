@@ -57,7 +57,7 @@ flutter run
 -Register
 
 -Add contact
-<img src="https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/84dc0433-d38f-4fe8-8064-04f9ad64fbd4" width="500" height="650" />
+
 
 -Creat goup
 
@@ -81,8 +81,5 @@ flutter run
 
 -Post Stories
 
-![Screenshot_20240430-152535](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/ff750a93-4862-4dc0-ab34-a4f8540734a5)
-![Screenshot_20240430-152539](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/4e50418c-8054-4aa9-a22e-e1cf56fd308b)
-![Screenshot_20240430-152546](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/093754bd-2d7b-4aaf-ab6a-75babe4d1d25)
 
 ##### Copyright &copy; 2024
