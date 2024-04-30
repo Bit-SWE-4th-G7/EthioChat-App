@@ -24,4 +24,10 @@
 ![Screenshot_20240430-151109](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/2dccbe7c-7578-45a4-b688-7a7302eb4c6a)
 ![Screenshot_20240430-151137](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/7aa9cdcb-cc5b-4cd3-8f32-2d8567344208)
 
+-Post Stories
+
+![Screenshot_20240430-152546](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/093754bd-2d7b-4aaf-ab6a-75babe4d1d25)
+![Screenshot_20240430-152539](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/4e50418c-8054-4aa9-a22e-e1cf56fd308b)
+![Screenshot_20240430-152535](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/ff750a93-4862-4dc0-ab34-a4f8540734a5)
+
 ##### Copyright &copy; 2024
