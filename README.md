@@ -66,13 +66,17 @@ EthioChat prioritizes user data safety through stringent security measures, part
 ## Screenshots
 
 ### Home Page
+
 ![Home page](./assets/C.JPG)
+
 ![Home Page](./assets/S.JPG)
 
 ### Person Chat
+
 ![Person chat](./assets/PC.JPG)
 
-## *Group Chat
+## Group Chat
+
 ![Person chat](./assets/GS.JPG)
 
 ## Create Group
