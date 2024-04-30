@@ -92,4 +92,4 @@ EthioChat prioritizes user data safety through stringent security measures, part
 
 
 
-##### Copyright &copy; 2024
+#### Copyright &copy; 2024
