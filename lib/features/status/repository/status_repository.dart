@@ -115,15 +115,7 @@ class StatusRepository {
   Future<List<Status>> getStatus(BuildContext context) async {
     List<Status> statusData = [];
     try {
-      var statusesSnapshot = await firestore
-          .collection('status')
-          .where(
-            'createdAt',
-            isGreaterThan: DateTime.now()
-                .subtract(const Duration(hours: 24))
-                .millisecondsSinceEpoch,
-          )
-          .get();
+      var statusesSnapshot = await firestore.collection('status').get();
       for (var tempData in statusesSnapshot.docs) {
         Status tempStatus = Status.fromMap(tempData.data());
 
