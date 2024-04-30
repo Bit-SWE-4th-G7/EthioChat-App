@@ -67,9 +67,10 @@ EthioChat prioritizes user data safety through stringent security measures, part
 
 ### Home Page
 
-![Home page](./assets/C.JPG)
-
-![Home Page](./assets/S.JPG)
+<p float = "left">
+<img src="./assets/C.JPG"/>
+<img src="./assets/S.JPG"/>
+</p>
 
 ### Person Chat
 
