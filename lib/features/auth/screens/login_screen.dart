@@ -54,7 +54,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
         title: const Text(
           'Enter your phone number',
           style: TextStyle(
-              color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+              color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
         ),
         // foregroundColor: Colors.white,
         elevation: 0,
