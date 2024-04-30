@@ -64,7 +64,7 @@ EthioChat prioritizes user data safety through stringent security measures, part
 - Yikeber Misganaw
 
 ### Screenshots
-![Home page](./images/C.JPG)
+![Home page](./assets/C.JPG)
 ![Home Page](./assets/S.JPG)
 *Home Page*
 
