@@ -17,6 +17,11 @@
 - Solomon Muhye
 - Yikeber Misganaw
 ### Screenshots
+
+-Add contact
+
+![Screenshot_20240430-151514](https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/84dc0433-d38f-4fe8-8064-04f9ad64fbd4)
+
 -Creat goup
 <img src="https://github.com/Bit-SWE-4th-G7/EthioChat-App/assets/109926026/c7ed4a79-7721-4f73-b22c-f4260f196878" alt="sample1" width="500" height="400" />
 
