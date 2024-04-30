@@ -1,5 +1,6 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:ethiochat/colors.dart';
+// import 'package:ethiochat/colors.dart';
 import 'package:ethiochat/common/utils/utils.dart';
 import 'package:ethiochat/common/widgets/custom_button.dart';
 import 'package:ethiochat/features/auth/controller/auth_controller.dart';
@@ -50,8 +51,12 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Enter your phone number'),
-        foregroundColor: Colors.black,
+        title: const Text(
+          'Enter your phone number',
+          style: TextStyle(
+              color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
+        ),
+        // foregroundColor: Colors.white,
         elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -75,10 +80,16 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 height: 10,
               ),
               TextButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(tabColor)),
                   onPressed: pickCountry,
                   child: Text(
                     "Pick Country",
-                    style: TextStyle(color: Colors.black),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
                   )),
               const SizedBox(
                 height: 5,
@@ -113,7 +124,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 height: size.height * 0.55,
               ),
               SizedBox(
-                width: 90,
+                width: 120,
                 child: CustomButton(
                   onPressed: sendPhoneNumber,
                   text: 'NEXT',
