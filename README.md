@@ -69,6 +69,17 @@ EthioChat prioritizes user data safety through stringent security measures, part
 
 ![Landing page](./assets/L.JPG)
 
+### Authentication by phone number
+
+![Authentication](./assets/P.JPG)
+
+### Verfiying phone number
+
+![Authentication](./assets/OTP.JPG)
+
+### User Registration 
+
+![Registration](./assets/RU.JPG)
 ### Home Page
 
 ![Home page](./assets/C.JPG)
